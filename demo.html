@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 根据 高德地图 api 获取行政区划
+      fetch(
+        `https://restapi.amap.com/v3/config/district?keywords=中国&subdistrict=3&key=663911e5112e094be57ccf323aa9c5ea`
+      )
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+          console.log(JSON.stringify(res.districts[0].districts));
+        });
+    </script>
+  </body>
+</html>
